@@ -4,11 +4,11 @@ function ProfilePage() {
   const [user, setUser] = useState(null);
 
   const getProfile = async () => {
-    const token = localStorage.getItem("token");////save token
+    const token = localStorage.getItem("token");
 
     const request = await fetch("https://dummyjson.com/auth/me", {
       headers: {
-        Authorization: `Bearer ${token}`,//////authorization checking
+        Authorization: `Bearer ${token}`,
       },
     });
 
@@ -22,7 +22,7 @@ function ProfilePage() {
   }, []);
 
   if (!user) {
-    return <h2>Loading...</h2>;///////checking if user data has arrived?
+    return <h2>Loading...</h2>;
   }
 
   return (
